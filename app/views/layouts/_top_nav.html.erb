@@ -66,6 +66,18 @@
           My Cart (<%= cart.size %>) <% end %>
         </li>
         <li class="nav-item end-0"><%= link_to "About Us", about_index_path %></li>
+        <% if session[:user_id].present? %>
+          <li class="nav-item">
+            <%= link_to "Logout", logout_path, method: :delete, class: "nav-link" %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Login", login_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Register", new_user_path, class: "nav-link" %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
