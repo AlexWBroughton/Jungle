@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'about/index'
   root to: 'products#index'
 
-  
+
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy', as: :logout
@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     root to: 'dashboard#show'
     resources :products, except: [:edit, :update, :show]
     resources :categories, only: [:index, :new, :create]
+    resources :sales, only:[:index,:new,:create]
   end
 
   resources :users, only: [:new, :create]

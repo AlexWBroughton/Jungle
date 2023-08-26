@@ -1,0 +1,30 @@
+<%= form_for @sale, url: admin_sales_path, method: :post do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :starts_on %>
+    <%= f.date_field :starts_on, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :ends_on %>
+    <%= f.date_field :ends_on, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :status %>
+    <%= f.select :status, ['Active', 'Inactive'], {}, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :percent_off %>
+    <%= f.number_field :percent_off, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit "Create Sale", class: "btn btn-primary" %>
+  </div>
+<% end %>
