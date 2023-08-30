@@ -30,9 +30,18 @@
                 <p><%= item.product.description %></p>
               </td>
             <td><img src="<%= item.product.image %>" class="img"></td>
-            <td><%= item.product.price %></td>
+            <% if active_sale? %>
+               <%= humanized_money_with_symbol(item.product.price * (1 -   @active_sale.percent_off.to_f / 100)) %>
+               <span class="sale-price">(On Sale!)</span>
+            <% else %>
+               <%= item.product.price %>
+            <% end %>
             <td><%= item.quantity %></td>
-            <td><%= item.product.price * item.quantity %></td>
+            <% if active_sale? %>
+              <%= humanized_money_with_symbol((item.product.price * (1 - @active_sale.percent_off.to_f / 100)) * item.quantity) %>
+            <% else %>
+                <%= item.product.price * item.quantity %>
+            <% end %>
           </tr>
         <% end %>
       </tbody>

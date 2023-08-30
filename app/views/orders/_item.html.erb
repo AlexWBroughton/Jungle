@@ -1,5 +1,6 @@
 <tr>
   <td>
+    <!-- Empty cell -->
   </td>
   <td>
     <h4><%= product.name %></h4>
@@ -7,16 +8,25 @@
     <p><%= product.description %></p>
   </td>
   <td>
-    <%= humanized_money_with_symbol(product.price) %>
+    <% if active_sale? %>
+      <%= humanized_money_with_symbol(product.price * (1 - @active_sale.percent_off.to_f / 100)) %>
+      <span class="sale-price">(On Sale!)</span>
+    <% else %>
+      <%= humanized_money_with_symbol(product.price) %>
+    <% end %>
   </td>
   <td>
     <div>
-    <%= button_to remove_item_cart_path(product_id: product.id), class: 'btn btn-xs btn-danger' do %> - <% end %>
-    <%= quantity %>
-    <%= button_to add_item_cart_path(product_id: product.id), class: 'btn btn-xs btn-success' do %> + <% end %>
+      <%= button_to remove_item_cart_path(product_id: product.id), class: 'btn btn-xs btn-danger' do %> - <% end %>
+      <%= quantity %>
+      <%= button_to add_item_cart_path(product_id: product.id), class: 'btn btn-xs btn-success' do %> + <% end %>
     </div>
   </td>
   <td>
-    <%= humanized_money_with_symbol(product.price * quantity) %>
+    <% if active_sale? %>
+      <%= humanized_money_with_symbol((product.price * (1 - @active_sale.percent_off.to_f / 100)) * quantity) %>
+    <% else %>
+      <%= humanized_money_with_symbol(product.price * quantity) %>
+    <% end %>
   </td>
 </tr>
