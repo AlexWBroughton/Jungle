@@ -1,7 +1,18 @@
-it("There is products on the page", () => {
-  cy.get(".products article").should("be.visible");
+describe("Product Page Content", () => {
+  const homeUrl = "http://localhost:3000/";
+
+  it("displays products on the page", () => {
+    cy.visit(homeUrl);
+    cy.get(".products article").should("be.visible");
+  });
+
+  it("displays 12 products on the page", () => {
+    cy.visit(homeUrl);
+    cy.get(".products article").should("have.length", 12);
+  });
 });
 
-it("There is 2 products on the page", () => {
-  cy.get(".products article").should("have.length", 2);
-});
+
+
+
+
