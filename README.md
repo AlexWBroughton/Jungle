@@ -4,12 +4,12 @@ Welcome to Jungle, an e-commerce web app built with Ruby on Rails. This applicat
 
 ## Features
 
-Browse products by category.
-View product descriptions, prices, and availability.
-Add products to your cart and proceed to the checkout page.
-Apply admin discounts and view the final order total.
-User authentication and account management.
-Admin dashboard for managing products, categories, and sales.
+Markup : * Browse products by category.
+         * View product descriptions, prices, and availability.
+         * Add products to your cart and proceed to the checkout page.
+         * Apply admin discounts and view the final order total.
+         * User authentication and account management.
+         * Admin dashboard for managing products, categories, and sales.
 
 ## Installation
 
