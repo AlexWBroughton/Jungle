@@ -27,6 +27,10 @@ Admin dashboard for managing products, categories, and sales.
 
 ## Screenshots
 
+![ScreenShot](https://github.com/AlexWBroughton/Jungle/blob/master/docs/Screen%20Shot%202023-08-30%20at%2012.47.00%20PM.png)
+![ScreenShot](https://github.com/AlexWBroughton/Jungle/blob/master/docs/Screen%20Shot%202023-08-30%20at%2012.47.19%20PM.png)
+![ScreenShot](https://github.com/AlexWBroughton/Jungle/blob/master/docs/Screen%20Shot%202023-08-30%20at%2012.48.01%20PM.png)
+
 ## Additional Setup
 
 1. Run bundle install to install dependencies
